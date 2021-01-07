@@ -3,20 +3,16 @@
 
 int main(int argc, char const *argv[]) {
 
-  List<int>* n = new List<int>();
+  List<double>* n = new List<double>();
 
   n->add(5);
   n->add(2);
   n->add(0);
   n->add(7);
 
-  delete n;
   n->printList();
 
-
-
-  //std::cout <<  << '\n';
-
+  
 
   return 0;
 }
