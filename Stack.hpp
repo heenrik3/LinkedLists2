@@ -41,7 +41,12 @@ public:
     this->size = 0;
   }
 
-  ~Stack();
+  ~Stack()
+  {
+    while (!this->isEmpty()) {
+      this->pop();
+    }
+  }
 
   bool isEmpty()
   {
@@ -53,7 +58,7 @@ public:
 
   int getSize()
   {
-    return this.size;
+    return this->size;
   }
 
   void push(T data)
@@ -63,21 +68,33 @@ public:
 
     node->setNext(this->top);
     this->top = node;
+
+    this->size++;
   }
 
   void pop()
   {
     if (!this->isEmpty()) {
-      Node<T>* node;
+      if (this->size > 1) {
+        Node<T>* node;
 
-      node = this->top->getNext();
-      delete this->top;
-      this->top = node;
+        node = this->top->getNext();
+        delete this->top;
+        this->top = node;
+
+        this->size--;
+      }
+      else if (this->size == 1)
+      {
+        delete this->top;
+        this->top = nullptr;
+
+        this->size--;
+      }
     }
     else
     {
-      delete this->top;
-      this->top = nullptr;
+      std::cout << "Can't pop an empty stack!" << '\n';
     }
   }
 
@@ -98,7 +115,7 @@ public:
     }
     else
     {
-        std::cout << "Not possible print an empty stack!" << std::endl;
+        std::cout << "Not possible to print an empty stack!" << std::endl;
     }
   }
 };

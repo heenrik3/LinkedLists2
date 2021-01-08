@@ -1,22 +1,21 @@
 #include <iostream>
 #include "List.hpp"
 #include "Stack.hpp"
+#include "Queue.hpp"
 
 int main(int argc, char const *argv[]) {
 
   //List<double>* n = new List<double>();
-  Stack<int>* n = new Stack<int>();
+  Queue<int>* n = new Queue<int>();
 
-  n->push(5);
-  n->push(2);
-  n->push(0);
-  n->push(7);
+  n->queue(5);
+  n->queue(2);
+  n->queue(0);
+  n->queue(7);
 
-  n->print();
-  n->pop();
   n->print();
 
 
-
+  delete n;
   return 0;
 }
