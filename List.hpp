@@ -46,8 +46,6 @@ public:
     ~List()
     {
 
-      //  Node<T>* tmp;
-
         while(!this->isEmpty())
         {
           this->pop();
