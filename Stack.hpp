@@ -83,7 +83,7 @@ public:
 
   void print()
   {
-    if (!this->isEmpty()) {         // if list is not empty
+    if (!this->isEmpty()) {         // if stack is not empty
 
       Node<T>* tmp = this->top;    // new temporary pointer to the first node on list
 
@@ -100,11 +100,7 @@ public:
     {
         std::cout << "Not possible print an empty stack!" << std::endl;
     }
-
   }
-
-
-
 };
 
 
