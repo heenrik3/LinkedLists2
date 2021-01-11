@@ -15,6 +15,12 @@ int main(int argc, char const *argv[]) {
 
   n->print();
 
+  n->dequeue();
+  n->print();
+  n->dequeue();
+  n->print();
+  n->dequeue();
+  n->print();
 
   delete n;
   return 0;

@@ -76,6 +76,31 @@ public:
       }
     }
 
+    void dequeue()
+    {
+      Node<T>* tmp;
+
+      if (getSize() > 1) {
+          tmp = this->head->getNext();
+
+          delete this->head;
+          this->head = tmp;
+
+          this->size--;
+
+      } else if (getSize() == 1) {
+
+          delete this->head;
+          this->head = nullptr;
+          this->tail = nullptr;
+
+          this->size--;
+      }
+      else {
+        std::cout << "Not possible dequeue an empty queue!" << '\n';
+      }
+    }
+
     void print()
     {
       if (!this->isEmpty()) {
@@ -91,6 +116,9 @@ public:
         }
         std::cout << "endQueue" << '\n';
 
+      }
+      else {
+        std::cout << "Not possible to print an empty queue!" << '\n';
       }
     }
 
