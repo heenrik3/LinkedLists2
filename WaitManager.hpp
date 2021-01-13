@@ -15,12 +15,11 @@
 #include "Stack.hpp"
 #include "Queue.hpp"
 
-template <class T>
+//template <class T>
 class WaitManager {
 
 private:
-  T* data;
-  T* next;
+  Node* node;
 
   T* getLast()
   {
@@ -36,13 +35,15 @@ private:
 
   bool isEmpty()
   {
-    (this->data == nullptr) ? return true : return false;
+
+    return (this->data == nullptr) ? true : false;
+
   }
 
 public:
     WaitManager()
     {
-      this->data = this->next = nullptr;
+      this->node = nullptr;
     }
 
     virtual ~WaitManager()
@@ -50,18 +51,10 @@ public:
 
     }
 
-    void addType(T data)
+    void newList()
     {
-      if (!this->isEmpty()) {
-        T* tmp;
-        tmp = this->getLast();
-
-        tmp->next(new T(data));
-      }
-      else {
-        this->data = new T();
-      }
     }
+
 
 };
 

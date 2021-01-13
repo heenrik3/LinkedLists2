@@ -8,7 +8,9 @@
 #ifndef List_hpp
 #define List_hpp
 
-#include <stdbool.h>
+#include <iostream>
+#include <cstdbool>
+
 #include "Node.hpp"
 
 template <class T>

@@ -7,8 +7,9 @@
 int main(int argc, char const *argv[])
 {
 
-  WaitManager<int>* wManager = new WaitManager<int>();
+  WaitManager* wManager = new WaitManager();
 
+  wManager.newList(new List<int>());
 
   delete wManager;
   return 0;
