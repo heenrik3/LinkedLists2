@@ -120,5 +120,4 @@ public:
   }
 };
 
-
 #endif /* Stack_hpp */

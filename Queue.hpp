@@ -9,6 +9,7 @@
 #ifndef Queue_hpp
 #define Queue_hpp
 
+#include <iostream>
 #include <stdbool.h>
 
 #include "Node.hpp"
@@ -73,6 +74,7 @@ public:
       else
       {
         this->head = this->tail = new Node<T>(data);
+        this->size++;
       }
     }
 
@@ -115,14 +117,14 @@ public:
           tmp = tmp->getNext();
         }
         std::cout << "endQueue" << '\n';
+                std::cout << this->getSize() << '\n';
 
       }
       else {
         std::cout << "Not possible to print an empty queue!" << '\n';
+        std::cout << this->getSize() << '\n';
       }
     }
-
 };
-
 
 #endif /* Queue_hpp */

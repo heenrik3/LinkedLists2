@@ -12,15 +12,16 @@ int main(int argc, char const *argv[]) {
   n->queue(2);
   n->queue(0);
   n->queue(7);
+  std::cout << n->getSize() << '\n';
 
   n->print();
+  n->dequeue();
+  n->print();
+  n->dequeue();
+  n->print();
+  n->dequeue();
+  n->print();
 
-  n->dequeue();
-  n->print();
-  n->dequeue();
-  n->print();
-  n->dequeue();
-  n->print();
 
   delete n;
   return 0;
