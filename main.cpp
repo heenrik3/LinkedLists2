@@ -2,27 +2,14 @@
 #include "List.hpp"
 #include "Stack.hpp"
 #include "Queue.hpp"
+#include "WaitManager.hpp"
 
-int main(int argc, char const *argv[]) {
+int main(int argc, char const *argv[])
+{
 
-  //List<double>* n = new List<double>();
-  Queue<int>* n = new Queue<int>();
-
-  n->queue(5);
-  n->queue(2);
-  n->queue(0);
-  n->queue(7);
-  std::cout << n->getSize() << '\n';
-
-  n->print();
-  n->dequeue();
-  n->print();
-  n->dequeue();
-  n->print();
-  n->dequeue();
-  n->print();
+  WaitManager<int>* wManager = new WaitManager<int>();
 
 
-  delete n;
+  delete wManager;
   return 0;
 }

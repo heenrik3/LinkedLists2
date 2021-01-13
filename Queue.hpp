@@ -10,7 +10,7 @@
 #define Queue_hpp
 
 #include <iostream>
-#include <stdbool.h>
+#include <cstdbool>
 
 #include "Node.hpp"
 
@@ -24,18 +24,6 @@ private:
   int size;
 
   // methods
-  /*Node<T>* getPreviousLastNode()
-  {
-    Node<T>* tmp = this->head;
-
-    while (tmp->getNext() != this->tail) {
-
-        tmp = tmp->getNext();
-
-    }
-
-    return tmp;
-  } */
 
 public:
     Queue()
@@ -46,7 +34,9 @@ public:
 
     virtual ~Queue()
     {
-
+        while (!this->isEmpty()) {
+          this->dequeue();
+        }
     }
 
     bool isEmpty()
