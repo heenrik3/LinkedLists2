@@ -106,7 +106,7 @@ public:
 
       while (tmp != nullptr) {
 
-        std::cout << tmp->getData() << " -> ";
+        std::cout << tmp->getData() << std::endl;
 
         tmp = tmp->getNext();
       }

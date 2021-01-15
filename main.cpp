@@ -2,15 +2,18 @@
 #include "List.hpp"
 #include "Stack.hpp"
 #include "Queue.hpp"
-#include "WaitManager.hpp"
+//#include "WaitManager.hpp"
 
 int main(int argc, char const *argv[])
 {
 
-  WaitManager* wManager = new WaitManager();
+  Stack<double>* stack  = new Stack<double>();
 
-  wManager.newList(new List<int>());
+  stack->push(5);
+  stack->push(100);
+  stack->push(400);
+  stack->print();
 
-  delete wManager;
+  delete stack;
   return 0;
 }
